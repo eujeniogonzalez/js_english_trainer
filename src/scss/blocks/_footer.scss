@@ -1,0 +1,8 @@
+footer {
+	@include size (100%, 50px, false, false);
+	@include flex(center, center, false);
+	margin-top: auto; // stretch empty page
+	background-color: whitesmoke;
+	color: #666666;
+	font-size: 14px;
+}

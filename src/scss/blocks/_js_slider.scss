@@ -1,0 +1,202 @@
+.lesson_info {
+	@include size (96%, 26px, false, 1000px);
+	margin: auto;
+	@include flex(space-between, false, false);
+	
+	@media screen and (max-width: $mobile_big) {@include size (90%, 26px, false, 1000px)}
+
+	div {
+		@include flex(space-between, flex-end, false);
+		font-size: 14px;
+
+		.current_word_number {
+			display: inline-block;
+			text-align: center;
+			width:22px;
+		}
+	}
+}
+
+.slider_wrapper {
+	@include size (96%, 500px, false, 1000px);
+	margin: 20px auto 50px auto;
+	padding: 30px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	box-shadow: 0 0 15px 5px #f2f2f2;
+	@include flex(false, false, column);
+
+	@media screen and (max-width: $mobile_big) {
+		@include size (90%, 500px, false, 1000px);
+		padding: 10px;
+		box-shadow: 0 0 15px 5px #e6e6e6;
+	}
+
+	.slider {
+		@include flex(false, false, false);
+		flex-grow: 1;
+		overflow: hidden;
+		
+		.slider_line {
+			@include flex(false, false, false);
+			width: 100%;
+			left: 0px;
+			transition: all ease 0.5s;
+
+			.slider_line_item {
+				@include size (false, 100%, 100%, false);
+				@include flex(false, false, column);
+				margin-right: 50px;
+
+				.slider_item_title {
+					padding-bottom: 20px;
+					font-size: 14px;
+				}
+
+				.slider_item_content {
+					@include flex(center, stretch, false);
+					flex-grow: 1;
+
+					.words {
+						@include flex(false, false, false);
+						flex-basis: 100%;
+
+						@media screen and (max-width: $mobile_big) {@include flex(center, center, column)}
+
+						.word_foreign, .word_russian {
+							//all font sizes in word blocks are for 15 characters
+							@include flex(center, center, false);
+							flex-basis: 50%;
+							font-size: 36px;
+							font-weight: bold;
+							
+							@media screen and (max-width: $tablet_big) {font-size: 32px}
+							@media screen and (max-width: $tablet_small) {font-size: 26px}
+							@media screen and (max-width: $mobile_big) {font-size: 30px; align-self: stretch}
+							@media screen and (max-width: $mobile_small) {font-size: 24px}
+						}
+
+						.word_foreign {
+							position: relative;
+							color: coral;
+
+							.word_filter {
+								@include size (100%, 100%, false, false);
+								@include flex(center, flex-end, false);
+								background-color: coral;
+								position: absolute;
+								top: 0px;
+								left: 0px;
+								border-radius: 5px;
+								color: #ffffff;
+								font-weight: normal;
+								cursor: pointer;
+								transition: all ease 0.5s;
+
+								.word_filter_hint {
+									padding-bottom: 30px;
+									font-size: 14px;
+								}
+							}
+						}
+					}
+
+					.finish_slide {
+						@include flex(false, center, false);
+
+						.repeat_button {
+							@include size (200px, 50px, false, false);
+							border: none;
+							border-radius: 3px;
+							cursor: pointer;
+							font-size: 14px;
+							background-color: coral;
+							color: white;
+
+							@media screen and (max-width: $mobile_big) {@include size (230px, 90px, false, false)}
+						}
+					}
+
+					.keyboard_hint {
+						font-size: 10px;
+						letter-spacing: 1px;
+					}
+				}
+			}
+		}
+	}
+
+	.slider_buttons {
+		@include flex(space-between, center, false);
+		min-height: 50px;
+		flex-wrap: wrap;
+
+		& svg {
+			fill: #ffffff;
+		}
+
+		.slider_btn_prev, .slider_btn_next {
+			background-color: coral;
+			border: none;
+			color: white;
+			padding: 10px 40px;
+			font-size: 16px;
+			border-radius: 3px;
+			cursor: pointer;
+			@media screen and (max-width: $mobile_big) {padding: 20px 50px}
+		}
+		
+		.slider_btn_prev {
+			order: 1;
+
+			@media screen and (max-width: $mobile_big) {order: 2}
+		}
+		
+		.slider_btn_next {
+			order: 3;
+		}
+
+		.slider_btn_disabled {
+			background-color: LightGrey;
+		}
+
+		.slider_btn_hidden {
+			display: none;
+		}
+
+		.slider_bullets {
+			@include flex(center, false, false);
+			order: 2;
+			padding: 10px 0;
+
+			@media screen and (max-width: $mobile_big) {
+				order: 1;
+				flex-basis: 100%;
+			}
+		}
+		
+		.slider_bullets_item {
+			@include size (20px, 5px, false, false);
+			margin: 0 5px;
+			background-color: #cccccc;
+
+			@media screen and (max-width: $tablet_small) {@include size (15px, 5px, false, false)}
+			@media screen and (max-width: $mobile_big) {
+				@include size (5px, 5px, false, false);
+				border-radius: 50%;
+			}
+		}
+		
+		.slider_bullets_item_active {
+			background-color: coral;
+		}
+		
+		.slider_bullets_hidden {
+			display: none;
+		}
+
+		@media screen and (max-width: $mobile_big) {
+			min-height: 100px;
+		}
+	}
+}

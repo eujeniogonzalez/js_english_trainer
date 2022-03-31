@@ -1,0 +1,55 @@
+mixin slider_line_item(russian_word, foreign_word, word_id)
+    .slider_line_item
+        .slider_item_title Переведите на английский
+        .slider_item_content
+            .words
+                .word_russian= russian_word
+                .word_foreign
+                    = foreign_word
+                    .word_filter(id = "filter_id_" + word_id, onclick = 'hideWordFilter(' + word_id + ')')
+                        .word_filter_hint 
+                            | показать 
+                            span.keyboard_hint (Shift)
+
+.lesson_info
+    div Урок №1
+    div
+        | Повторение слов (
+        span#current_word_number.current_word_number 1
+        | из 
+        span#total_word_number.current_word_number 
+        | )
+
+.slider_wrapper
+    .slider
+        .slider_line
+
+            +slider_line_item('невероятно', 'unbelievable', 1)
+            +slider_line_item('голубь', 'pigeon', 2)
+            +slider_line_item('тигр', 'tiger', 3)
+            +slider_line_item('улучшать', 'improve', 4)
+            +slider_line_item('снег', 'snow', 5)
+            +slider_line_item('дождь', 'rain', 6)
+            +slider_line_item('кролик', 'rabbit', 7)
+            +slider_line_item('собака', 'dog', 8)
+            +slider_line_item('кошка', 'cat', 9)
+            +slider_line_item('пылесос', 'vacuum-cleaner', 10)
+            
+            .slider_line_item
+                .slider_item_title Завершение
+                .slider_item_content
+                    .finish_slide
+                        button.repeat_button(type='button') 
+                            | Ещё раз 
+                            span.keyboard_hint (Enter)
+    
+    .slider_buttons
+        button.slider_btn_prev.slider_btn_disabled(disabled='')
+            svg(width='20px' height='10px')
+                use(xlink:href='#arrow_left')
+
+        .slider_bullets
+
+        button.slider_btn_next 
+            svg(width='20px' height='10px')
+                use(xlink:href='#arrow_right')

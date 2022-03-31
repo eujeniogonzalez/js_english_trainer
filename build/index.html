@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>Тренажёр английских слов на чистом javascript</title>
+  </head>
+  <body>
+    <header>English trainer by javascript</header>
+    <main> 
+      <div class="lesson_info">
+        <div>Урок №1</div>
+        <div>Повторение слов (<span class="current_word_number" id="current_word_number">1</span>из <span class="current_word_number" id="total_word_number"> </span>)</div>
+      </div>
+      <div class="slider_wrapper">
+        <div class="slider">
+          <div class="slider_line">
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">невероятно</div>
+                        <div class="word_foreign">unbelievable
+                          <div class="word_filter" id="filter_id_1" onclick="hideWordFilter(1)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">голубь</div>
+                        <div class="word_foreign">pigeon
+                          <div class="word_filter" id="filter_id_2" onclick="hideWordFilter(2)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">тигр</div>
+                        <div class="word_foreign">tiger
+                          <div class="word_filter" id="filter_id_3" onclick="hideWordFilter(3)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">улучшать</div>
+                        <div class="word_foreign">improve
+                          <div class="word_filter" id="filter_id_4" onclick="hideWordFilter(4)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">снег</div>
+                        <div class="word_foreign">snow
+                          <div class="word_filter" id="filter_id_5" onclick="hideWordFilter(5)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">дождь</div>
+                        <div class="word_foreign">rain
+                          <div class="word_filter" id="filter_id_6" onclick="hideWordFilter(6)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">кролик</div>
+                        <div class="word_foreign">rabbit
+                          <div class="word_filter" id="filter_id_7" onclick="hideWordFilter(7)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">собака</div>
+                        <div class="word_foreign">dog
+                          <div class="word_filter" id="filter_id_8" onclick="hideWordFilter(8)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">кошка</div>
+                        <div class="word_foreign">cat
+                          <div class="word_filter" id="filter_id_9" onclick="hideWordFilter(9)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_line_item">
+                    <div class="slider_item_title">Переведите на английский</div>
+                    <div class="slider_item_content">
+                      <div class="words">
+                        <div class="word_russian">пылесос</div>
+                        <div class="word_foreign">vacuum-cleaner
+                          <div class="word_filter" id="filter_id_10" onclick="hideWordFilter(10)">
+                            <div class="word_filter_hint">
+                               показать <span class="keyboard_hint">(Shift)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            <div class="slider_line_item">
+              <div class="slider_item_title">Завершение</div>
+              <div class="slider_item_content">
+                <div class="finish_slide">
+                  <button class="repeat_button" type="button">
+                     Ещё раз <span class="keyboard_hint">(Enter)</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider_buttons">
+          <button class="slider_btn_prev slider_btn_disabled" disabled="">
+            <svg width="20px" height="10px">
+              <use xlink:href="#arrow_left"></use>
+            </svg>
+          </button>
+          <div class="slider_bullets"></div>
+          <button class="slider_btn_next"> 
+            <svg width="20px" height="10px">
+              <use xlink:href="#arrow_right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer>English trainer by javascript</footer>
+    <svg width="0" height="0" style="position:absolute;">
+      <symbol id="arrow_right">
+        <path d="M20.3536 4.85355C20.5488 4.65829 20.5488 4.34171 20.3536 4.14645L17.1716 0.964466C16.9763 0.769204 16.6597 0.769204 16.4645 0.964466C16.2692 1.15973 16.2692 1.47631 16.4645 1.67157L19.2929 4.5L16.4645 7.32843C16.2692 7.52369 16.2692 7.84027 16.4645 8.03553C16.6597 8.2308 16.9763 8.2308 17.1716 8.03553L20.3536 4.85355ZM0 5H20V4H0V5Z"></path>
+      </symbol>
+      <symbol id="arrow_left">
+        <path d="M0.646447 4.14645C0.451184 4.34171 0.451184 4.65829 0.646447 4.85355L3.82843 8.03553C4.02369 8.2308 4.34027 8.2308 4.53553 8.03553C4.7308 7.84027 4.7308 7.52369 4.53553 7.32843L1.70711 4.5L4.53553 1.67157C4.7308 1.47631 4.7308 1.15973 4.53553 0.964466C4.34027 0.769204 4.02369 0.769204 3.82843 0.964466L0.646447 4.14645ZM1 5H21V4H1V5Z"></path>
+      </symbol>
+    </svg>
+    <script src="js/main.js"></script>
+  </body>
+</html>

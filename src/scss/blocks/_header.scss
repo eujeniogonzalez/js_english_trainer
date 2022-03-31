@@ -1,0 +1,12 @@
+header {
+    @include size (96%, false, false, 1000px);
+    margin: auto;
+    padding: 20px 0 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: coral;
+
+	@media screen and (max-width: $mobile_big) {
+		@include size (90%, false, false, 1000px);
+	}
+}
